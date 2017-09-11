@@ -4,7 +4,7 @@ class Either {
   }
 
   static of(value) {
-    return new Either(value);
+    return new Right(value);
   }
 
   isLeft() {
@@ -23,8 +23,8 @@ class Either {
     return this.noop();
   }
 
-  ap() {
-    return this.noop();
+  ap(functor) {
+    return functor.isLeft() ? functor : functor.map(this.value);
   }
 
   fold(leftFn, rightFn) {
@@ -46,7 +46,7 @@ class Right extends Either {
   }
 
   map(fn) {
-    return this.isRight() ? Right.of(fn(this.value)) : this;
+    return Right.of(fn(this.value));
   }
 
   ap(functor) {
