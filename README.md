@@ -59,8 +59,8 @@ Accepts no parameters. Calling `.map` on an `Either` instance will return the `E
 
 ### fold(errorFn: () => {}, successFn: () => {}): Any
 Accepts two parameters of error and success which are both functions.
-In the event of the instance being a `Left`, the `errorFn` will be called and passed an array of errors.
-In the event of the instance being a `Right`, the `successFn` will be called and passed the value contained in the monad.
+  In the event of the instance being a `Left`, the `errorFn` will be called and passed an array of errors.
+  In the event of the instance being a `Right`, the `successFn` will be called and passed the value contained in the monad.
 `fold` will return the ouput of the called function.
 
 ## Right (subclass of `Either`)
