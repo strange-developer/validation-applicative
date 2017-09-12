@@ -33,10 +33,6 @@ class Either {
 }
 
 class Right extends Either {
-  constructor(val) {
-    super(val);
-  }
-
   isLeft() {
     return false;
   }
@@ -55,10 +51,6 @@ class Right extends Either {
 }
 
 class Left extends Either {
-  constructor(val) {
-    super(val);
-  }
-
   static of(val) {
     return new Left(val);
   }
