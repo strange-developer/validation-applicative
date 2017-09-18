@@ -1,7 +1,1 @@
-export {
-  Either,
-  Right,
-  Left,
-  Right as Success,
-  Left as Fail,
-} from './src/validation-applicative';
+export { Either, Right, Left, Right as Success, Left as Fail } from './src';

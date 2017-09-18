@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { curryN, identity, toUpper } from 'ramda';
-import { Either, Right, Left } from '../src/validation-applicative';
+import { Either, Right, Left } from '../src';
 
 describe('Either', () => {
   it('creates wrapped Either instance', () => {
