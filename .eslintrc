@@ -6,7 +6,8 @@
   "rules": {
     "no-unused-expressions": 0,
     "chai-friendly/no-unused-expressions": 2,
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "linebreak-style": "off"
   },
   "plugins": ["chai-friendly"]
 }

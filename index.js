@@ -1,8 +1,10 @@
-export {
+const { Either, Right, Left } = require('./src/index');
+
+module.exports = {
   Either,
   Right,
   Left,
-  Right as Success,
-  Left as Fail,
-  Left as Failure,
-} from './src';
+  Failure: Left,
+  Fail: Left,
+  Success: Right,
+};
