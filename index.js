@@ -4,4 +4,5 @@ export {
   Left,
   Right as Success,
   Left as Fail,
-} from './src/validation-applicative';
+  Left as Failure,
+} from './src';
