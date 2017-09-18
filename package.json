@@ -1,15 +1,17 @@
 {
   "name": "validation-applicative",
-  "version": "1.0.1",
-  "description": "Composable validations",
-  "main": "./index.js",
+  "version": "1.0.5",
+  "description": "Composable validations built on an Either monad",
+  "main": "index.js",
   "repository": {
     "type": "Git",
     "url": "https://github.com/strange-developer/validation-applicative"
   },
   "scripts": {
-    "test": "mocha-webpack --c --webpack-config webpack.config.js \"test/**/*.test.js\"",
-    "test:watch": "mocha-webpack --c -w --webpack-config webpack.config.js \"test/**/*.test.js\""
+    "test":
+      "mocha-webpack --c --webpack-config webpack.config.js \"test/**/*.test.js\"",
+    "test:watch":
+      "mocha-webpack --c -w --webpack-config webpack.config.js \"test/**/*.test.js\""
   },
   "author": "strange-developer",
   "license": "MIT",
