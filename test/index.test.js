@@ -64,6 +64,33 @@ describe('Either', () => {
       expect(actual).to.deep.eq(expected);
     });
   });
+  describe('ffold', () => {
+    it('returns a function', () => {
+      const expected = ['error1', 'error2'];
+      const actual = Either.of(curryN(3, identity)('test-value'))
+        .ap(Left.of(['error1']))
+        .ap(Left.of(['error2']))
+        .ffold(() => false, () => true);
+      expect(actual).to.be.a('function');
+    });
+    it('executes leftFn', () => {
+      const expected = ['error1', 'error2'];
+      const actual = Either.of(curryN(3, identity)('test-value'))
+        .ap(Left.of(['error1']))
+        .ap(Left.of(['error2']))
+        .ffold(identity, () => true);
+      expect(actual()).to.deep.eq(expected);
+    });
+    it('executes rightFn', () => {
+      const expected = { username: 'strange-developer' };
+      const innerValue = { username: 'strange-developer' };
+      const actual = Either.of(curryN(3, identity)(innerValue))
+        .ap(Right.of({ username: 'strange-developer' }))
+        .ap(Right.of({ username: 'strange-developer' }))
+        .ffold(() => false, identity);
+      expect(actual()).to.deep.eq(expected);
+    });
+  });
 });
 
 describe('Right', () => {
