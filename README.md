@@ -66,7 +66,7 @@ Accepts two parameters of error and success which are both functions.
 
 ### ffold(errorFn: () => {}, successFn: () => {}): Any
 Accepts two parameters of error and success which are both functions.
-`ffold` will return function, which when called, will function exactly like `fold`.
+`ffold` will return function, which when called, will work exactly like `fold`.
 (Battled to find a name for this function)
 
 ## Right (subclass of `Either`)
