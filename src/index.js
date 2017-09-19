@@ -30,6 +30,13 @@ class Either {
   fold(leftFn, rightFn) {
     return this.isLeft() ? leftFn(this.value) : rightFn(this.value);
   }
+
+  ffold(leftFn, rightFn) {
+    const that = this;
+    return function() {
+      return that.isLeft() ? leftFn(that.value) : rightFn(that.value);
+    };
+  }
 }
 
 class Right extends Either {
