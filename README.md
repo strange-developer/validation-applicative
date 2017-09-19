@@ -3,6 +3,12 @@ Composable, accumulative validations built on an Either Monad
 
 [![Build Status](https://travis-ci.org/strange-developer/validation-applicative.svg?branch=master)](https://travis-ci.org/strange-developer/validation-applicative)
 
+Installation:
+
+```
+npm i validation-applicative --save
+```
+
 Usage:
 
 ```
@@ -52,7 +58,7 @@ function validate(username) {
 ## Either (superclass)
 
 ### of(val: Any): Either
-Accepts a value which will be wrapped in an `Either` instance. 
+Accepts a value which will be wrapped in an `Either` instance.
 <br />The value is a `Right` which can be `ap`'d over as depicted in the example.
 
 ### map(): Either
@@ -64,13 +70,18 @@ Accepts two parameters of error and success which are both functions.
 <br />- In the event of the instance being a `Right`, the `successFn` will be called and passed the value contained in the monad.
 `fold` will return the ouput of the called function.
 
+### ffold(errorFn: () => {}, successFn: () => {}): Any
+Accepts two parameters of error and success which are both functions.
+`ffold` will return function, which when called, will work exactly like `fold`.
+(Battled to find a name for this function)
+
 ## Right (subclass of `Either`)
 
 ### of(val: Any): Right
 Accepts a value which will be wrapped in a `Right` instance.
 
 ### map(fn: () => {}): Right
-Accepts a function which will receive the value contained in the `Right` instance. 
+Accepts a function which will receive the value contained in the `Right` instance.
 <br />No checks are done to validate whether the instance is a `Right`. This functionality is supplied by the `.ap` method on the `Right`.
 
 ### ap(functor: Either): Either
