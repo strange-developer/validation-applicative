@@ -3,6 +3,12 @@ Composable, accumulative validations built on an Either Monad
 
 [![Build Status](https://travis-ci.org/strange-developer/validation-applicative.svg?branch=master)](https://travis-ci.org/strange-developer/validation-applicative)
 
+Installation:
+
+```
+npm i validation-applicative --save
+```
+
 Usage:
 
 ```
