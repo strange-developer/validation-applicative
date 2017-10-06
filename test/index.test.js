@@ -29,7 +29,7 @@ describe('Either', () => {
     it('returns Left', () => {
       const expected = Left.of(['error1']);
       const actual = Either.of(curryN(2, identity)('test-value')).ap(
-        Left.of(['error1'])
+        Left.of(['error1']),
       );
       expect(actual).to.deep.eq(expected);
     });
@@ -40,7 +40,7 @@ describe('Either', () => {
       });
       const innerValue = { username: 'strange', password: 'developer' };
       const actual = Either.of(curryN(2, identity)(innerValue)).ap(
-        Right.of(innerValue)
+        Right.of(innerValue),
       );
       expect(actual).to.deep.eq(expected);
     });
@@ -66,7 +66,6 @@ describe('Either', () => {
   });
   describe('ffold', () => {
     it('returns a function', () => {
-      const expected = ['error1', 'error2'];
       const actual = Either.of(curryN(3, identity)('test-value'))
         .ap(Left.of(['error1']))
         .ap(Left.of(['error2']))
@@ -120,7 +119,7 @@ describe('Right', () => {
       it('returns Left', () => {
         const expected = Left.of(['error1']);
         const actual = Right.of(curryN(2, identity)('test-value')).ap(
-          Left.of(['error1'])
+          Left.of(['error1']),
         );
         expect(actual).to.deep.eq(expected);
       });
@@ -131,7 +130,7 @@ describe('Right', () => {
         });
         const innerValue = { username: 'strange', password: 'developer' };
         const actual = Right.of(curryN(2, identity)(innerValue)).ap(
-          Right.of(innerValue)
+          Right.of(innerValue),
         );
         expect(actual).to.deep.eq(expected);
       });

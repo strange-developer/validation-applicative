@@ -4,6 +4,7 @@ class Either {
   }
 
   static of(value) {
+    // eslint-disable-next-line no-use-before-define
     return new Right(value);
   }
 
@@ -33,9 +34,7 @@ class Either {
 
   ffold(leftFn, rightFn) {
     const that = this;
-    return function() {
-      return that.isLeft() ? leftFn(that.value) : rightFn(that.value);
-    };
+    return () => (that.isLeft() ? leftFn(that.value) : rightFn(that.value));
   }
 }
 
